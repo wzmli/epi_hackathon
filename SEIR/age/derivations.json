@@ -14,14 +14,14 @@
   {
     "simulation_phase" : "during_pre_update",
     "output_names" : ["infection_y"],
-    "arguments" : ["transmission_y", "I_y", "N_y","transmission_o", "I_o", "N_o"],
-    "expression" : "transmission_y * I_y / N_y + transmission_o * I_o / N_o"
+    "arguments" : ["transmission_y", "I_y", "N_y","transmission_o", "I_o", "N_o","c_yy","c_yo"],
+    "expression" : "c_yy * transmission_y * I_y / N_y + c_yo * transmission_o * I_o / N_o"
   },
   
   {
     "simulation_phase" : "during_pre_update",
     "output_names" : ["infection_o"],
-    "arguments" : ["transmission_y", "I_y", "N_y","transmission_o", "I_o", "N_o"],
-    "expression" : "transmission_y * I_y / N_y + transmission_o * I_o / N_o"
+    "arguments" : ["transmission_y", "I_y", "N_y","transmission_o", "I_o", "N_o", "c_oo", "c_oy"],
+    "expression" : "c_oy * transmission_y * I_y / N_y + c_oo * transmission_o * I_o / N_o"
   }
 ]
