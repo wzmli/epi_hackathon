@@ -45,11 +45,19 @@ sim_results <- (sim_results
 	)
 )
 
-(sim_results %>% filter(matrix == "state") %>% filter(state == "I")
+(gg <- (sim_results %>% filter(matrix == "state") %>% filter(state == "I")
 %>% ggplot()
 	+ geom_line(aes(time, value, colour = age))
 	+ labs(colour = "state")
+	+ scale_color_manual(values=c("red","black"))
 	+ theme_bw()
+	+ theme(legend.position = "none")
+	+ ylab("Incidence")
+	+ ylim(c(0,10000000))
 )
+)
+
+gg
+ggsave("base.png",width=5,height=3)
 
 
