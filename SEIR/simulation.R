@@ -37,7 +37,9 @@ sim_results = mod_simulator$report()
 head(sim_results)
 sim_results
 
-(ggplot(sim_results)
+(sim_results
+  %>% filter(matrix == "total_inflow", row == "I")
+  %>% ggplot()
 	+ geom_line(aes(time, value, colour = row))
 	+ labs(colour = "state")
 	+ theme_bw()
