@@ -25,6 +25,10 @@ mod_simulator = model$simulators$tmb(time_steps = 100
 					 )
 	, transmission_y = params[["transmission_y"]]
   , transmission_o = params[["transmission_o"]]
+  , c_yy = params[["c_yy"]]
+  , c_yo = params[["c_yo"]]
+  , c_oy = params[["c_oy"]]
+  , c_oo = params[["c_oo"]]
 	, N_y = sum(as.numeric(params[c("S_y","E_y","I_y","H_y","R_y","D_y")]))
   , N_o = sum(as.numeric(params[c("S_o","E_o","I_o","H_o","R_o","D_o")]))
 	, .mats_to_return = c("state", "total_inflow")
@@ -32,6 +36,7 @@ mod_simulator = model$simulators$tmb(time_steps = 100
 )
 
 sim_results = mod_simulator$report()
+sim_results
 head(sim_results)
 sim_results <- (sim_results 
 	%>% mutate(state = gsub("_y","",row)
