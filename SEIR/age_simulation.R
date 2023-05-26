@@ -14,13 +14,13 @@ state <- params[state_name]
 
 mod_simulator = model$simulators$tmb(time_steps = 100
   , state = state
-	, flow = c(infection_y = params[["infection_y"]], progression = params[["progression_y"]]
-					 , hospitalization = params[["hospitalization_y"]]
-					 , discharge_y = params[["discharge_y"]], recovery = params[["recovery_y"]]
+	, flow = c(infection_y = params[["infection_y"]], progression_y = params[["progression_y"]]
+					 , hospitalization_y = params[["hospitalization_y"]]
+					 , discharge_y = params[["discharge_y"]], recovery_y = params[["recovery_y"]]
 					 , deathH_y = params[["deathH_y"]], deathI_y = params[["deathI_y"]],
 					 infection_o = params[["infection_o"]], progression_o = params[["progression_o"]]
 					 , hospitalization_o = params[["hospitalization_o"]]
-					 , discharge_o = params[["discharge_o"]], recovery_y = params[["recovery_o"]]
+					 , discharge_o = params[["discharge_o"]], recovery_o = params[["recovery_o"]]
 					 , deathH_o = params[["deathH_o"]], deathI_o = params[["deathI_o"]]
 					 )
 	, transmission_y = params[["transmission_y"]]
