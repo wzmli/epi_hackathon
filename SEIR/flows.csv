@@ -1,4 +1,6 @@
-from,to,flow,type,from_partition,to_partition,flow_partition,from_to_partition,from_flow_partition,to_flow_partition
-S,E,foi,per_capita,Epi,Epi,Epi,,,Null
-E,I,alpha,per_capita,Epi,Epi,Epi,,,Null
-I,R,gamma,per_capita,Epi,Epi,Epi,,,Null
+from,to,flow,type
+S,E,infection,per_capita
+E,I,progression,per_capita
+I,H,hospitalization,per_capita
+H,R,discharge,per_capita
+I,R,recovery,per_capita

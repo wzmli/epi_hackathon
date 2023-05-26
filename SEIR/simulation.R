@@ -1,13 +1,30 @@
+library(tidyverse)
 library(macpan2)
 
 model = Model(ModelFiles("SEIR/"))
 
-mod_simulator = model$simulators$tmb(
-	time_steps = 100,
-	state = c(S = 9998, E=1, I = 1, R = 0),
-	flow = c(foi = 0.1, alpha=0.2,gamma = 0.1),
-	beta = 1,
-	N = 10000 # explained below
+params = ("SEIR/default.csv"
+	%>% read_csv
+	%>% with(setNames(Default, Variable))
+)
+
+
+mod_simulator = model$simulators$tmb(time_steps = 100
+	, state = c(S = params[["S"]], E = params[["E"]], I = params[["I"]], H = params[["H"]], R = params[["R"]])
+	, flow = c(infection = params[["infection"]]
+					 , progression = params[["progression"]], recovery = params[["recovery"]]
+					 , hospitalization = params[["hospitalization"]], discharge = params[["discharge"]]
+					 )
+	, transmission = params[["transmission"]]
+	, N = sum(as.numeric(params[c("S","E","I","H","R")])) # explained below
+	# , state = c(S = 998, E = 1, I = 1, H = 0, R = 0)
+	# , flow = c(infection = 0.2
+	# 					 , progression = 0.5, recovery = 0.2
+	# 					 , hospitalization = 0.5, discharge = 0.5
+	# )
+	# , transmission = 1
+	# , N = 1000 # explained below
+	
 )
 
 sim_results = mod_simulator$report()

@@ -2,13 +2,13 @@
   {
     "simulation_phase" : "before",
     "output_names" : ["N"],
-    "arguments" : ["S", "E", "I", "R"],
-    "expression" : "sum(S, E, I, R)"
+    "arguments" : ["S", "E", "I", "H", "R"],
+    "expression" : "sum(S, E, I, H, R)"
   },
   {
     "simulation_phase" : "during_pre_update",
-    "output_names" : ["foi"],
-    "arguments" : ["I", "beta", "N"],
-    "expression" : "I * beta / N"
+    "output_names" : ["infection"],
+    "arguments" : ["transmission", "I", "N"],
+    "expression" : "transmission * I / N"
   }
 ]

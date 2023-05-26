@@ -2,9 +2,12 @@ Epi
 S
 E
 I
+H
 R
-beta
-alpha
-gamma
+infection
+progression
+recovery
+hospitalization
+discharge
 N
-foi
+transmission

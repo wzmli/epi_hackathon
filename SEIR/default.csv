@@ -1,0 +1,12 @@
+Variable,Default,Verbose Type,Notes
+S,3.83E+07,initial value of state variable,approximate population of Canada
+R,0,initial value of state variable,
+E,1,initial value of state variable,initial exposed individual
+I,1,initial value of state variable,
+H,0,initial value of state variable,
+transmission, 1, per-capita flow rate,
+infection, 0.1, per-capita flow rate,
+progression, 0.1, per-capita flow rate,
+recovery, 0.1, per-capita flow rate,
+hospitalization, 0.1, per-capita flow rate,
+discharge, 0.1, per-capita flow rate,
