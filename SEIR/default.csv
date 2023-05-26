@@ -5,7 +5,7 @@ E,1,initial value of state variable,initial exposed individual
 I,1,initial value of state variable,
 H,0,initial value of state variable,
 D,0,initial value of state variable,
-transmission, 1, per-capita flow rate,
+transmission, 1.5, per-capita flow rate,
 infection, 0.2, per-capita flow rate,
 progression, 0.2, per-capita flow rate,
 recovery, 0.1, per-capita flow rate,

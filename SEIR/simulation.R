@@ -8,9 +8,8 @@ params = ("SEIR/default.csv"
 	%>% with(setNames(Default, Variable))
 )
 
-state = c(S = params[["S"]], E = params[["E"]]
-							, I = params[["I"]], H = params[["H"]]
-							, R = params[["R"]], D = params[["D"]])
+state_name <- c("S","E","I","H","R","D")
+state <- params[state_name]
 
 mod_simulator = model$simulators$tmb(time_steps = 100
   , state = state
@@ -23,14 +22,6 @@ mod_simulator = model$simulators$tmb(time_steps = 100
 	, N = sum(as.numeric(params[c("S","E","I","H","R","D")])) # explained below
 	, .mats_to_return = c("state", "total_inflow")
 	, .dimnames = list(total_inflow = list(names(state), ""))
-	# , state = c(S = 998, E = 1, I = 1, H = 0, R = 0)
-	# , flow = c(infection = 0.2
-	# 					 , progression = 0.5, recovery = 0.2
-	# 					 , hospitalization = 0.5, discharge = 0.5
-	# )
-	# , transmission = 1
-	# , N = 1000 # explained below
-
 )
 
 sim_results = mod_simulator$report()
