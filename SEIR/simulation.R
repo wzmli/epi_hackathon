@@ -10,13 +10,16 @@ params = ("SEIR/default.csv"
 
 
 mod_simulator = model$simulators$tmb(time_steps = 100
-	, state = c(S = params[["S"]], E = params[["E"]], I = params[["I"]], H = params[["H"]], R = params[["R"]])
-	, flow = c(infection = params[["infection"]]
-					 , progression = params[["progression"]], recovery = params[["recovery"]]
-					 , hospitalization = params[["hospitalization"]], discharge = params[["discharge"]]
+	, state = c(S = params[["S"]], E = params[["E"]]
+							, I = params[["I"]], H = params[["H"]]
+							, R = params[["R"]], D = params[["D"]])
+	, flow = c(infection = params[["infection"]], progression = params[["progression"]]
+					 , hospitalization = params[["hospitalization"]]
+					 , discharge = params[["discharge"]], recovery = params[["recovery"]]
+					 , deathH = params[["deathH"]], deathI = params[["deathI"]]
 					 )
 	, transmission = params[["transmission"]]
-	, N = sum(as.numeric(params[c("S","E","I","H","R")])) # explained below
+	, N = sum(as.numeric(params[c("S","E","I","H","R","D")])) # explained below
 	# , state = c(S = 998, E = 1, I = 1, H = 0, R = 0)
 	# , flow = c(infection = 0.2
 	# 					 , progression = 0.5, recovery = 0.2

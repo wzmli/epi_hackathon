@@ -4,3 +4,5 @@ E,I,progression,per_capita
 I,H,hospitalization,per_capita
 H,R,discharge,per_capita
 I,R,recovery,per_capita
+H,D,deathH,per_capita
+I,D,deathI,per_capita
