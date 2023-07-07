@@ -45,7 +45,7 @@ tvsims <- (tvsims
 		data = data.frame(x = mod_simulator$get$initial("transmission_75_changepoints"))
 	)
 	+ ylim(c(0,1000000))
-	+ geom_hline(aes(yintercept=3750000))
+	+ geom_hline(aes(yintercept=375000))
 	
 	
 )

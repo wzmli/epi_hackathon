@@ -255,7 +255,7 @@ sim_results <- (sim_results
 	+ ylab("Incidence")
 	# + scale_y_log10()
 	+ ylim(c(0,1000000))
-	+ geom_hline(aes(yintercept=3750000))
+	+ geom_hline(aes(yintercept=375000))
 )
 )
 
