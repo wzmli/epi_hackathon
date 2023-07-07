@@ -44,7 +44,7 @@ tvsims <- (tvsims
 )
 
 
-(gg <- (tvsims %>% filter(matrix == "total_inflow") %>% filter(state == "I")
+(gg <- (tvsims %>% filter(matrix == "state") %>% filter(state == "I")
 	%>% ggplot()
 				+ geom_line(aes(time, value, colour = age))
 				+ labs(colour = "state")
